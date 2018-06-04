@@ -48,8 +48,14 @@ png(filename = "plot3.png", width = 480, height = 480)
 xyplot(Sub_metering_1+Sub_metering_2+Sub_metering_3~id, type = "l",data = sub_power, 
        ylab = "Global Active Power (kilowatts)", xlab = " ", col = c("black","red","blue"),
        scales=list(
-         x=list(at=at, labels = c("Thu","Fri", "Sat"), rot=90),tck = c(1,0)))
-
+         x=list(at=at, labels = c("Thu","Fri", "Sat"), rot=90),tck = c(1,0)),
+       key=list(corner = c(1,1), border = TRUE,
+                
+                lines=list(col=c("black","red", "blue"),  lwd=2),
+                
+                text=list(c("Sub_metering_1","Sub_metering_2", "Sub_metering_3"))
+                
+       ))
 
 dev.off()
 
